@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Impressionante</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: #764ba2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #667eea;
+        }
+
+        #magicBox {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            transition: transform 0.5s, background 0.5s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à Página Impressionante!</h1>
+        <p>Clique no botão abaixo para ver a mágica acontecer.</p>
+        <button id="magicButton">Clique Aqui</button>
+        <div id="magicBox"></div>
+    </div>
+    <script>
+        document.getElementById('magicButton').addEventListener('click', function() {
+            const magicBox = document.getElementById('magicBox');
+            magicBox.style.opacity = 1;
+            magicBox.style.transform = 'scale(1.5)';
+            magicBox.style.background = '#ff6b6b';
+
+            setTimeout(() => {
+                magicBox.style.transform = 'scale(1)';
+                magicBox.style.background = 'white';
+                magicBox.style.opacity = 0;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
